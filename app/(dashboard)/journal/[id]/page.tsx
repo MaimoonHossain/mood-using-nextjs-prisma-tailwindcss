@@ -19,9 +19,13 @@ const getEntry = async (id) => {
 const EntryPage = async ({ params }) => {
   const entry = await getEntry(params.id);
   const analysisData = [
-    { name: 'Summary', value: '' },
-    { name: 'Subject', value: '' },
-    { name: 'Mood', value: '' },
+    {
+      name: 'Summary',
+      value:
+        'A day filled with miseries and trials, but with a glimmer of hope for tomorrow.',
+    },
+    { name: 'Subject', value: 'One of Those Days' },
+    { name: 'Mood', value: 'neutral' },
     { name: 'Negative', value: 'False' },
   ];
 
@@ -42,7 +46,7 @@ const EntryPage = async ({ params }) => {
                 className='px-4 py-4 flex items-center justify-between border-b border-t border-black/10'
               >
                 <span className='text-lg font-semibold'>{item.name}</span>
-                <span>{item.value}</span>
+                <span className='px-4'>{item.value}</span>
               </li>
             ))}
           </ul>
